@@ -16,7 +16,28 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SplashScreen(),
+      home: GoScreen(),
+    );
+  }
+}
+
+class GoScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: SafeArea(
+        child: Center(
+          child: RaisedButton(
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => SplashScreen(),
+              ),
+            ),
+            child: Text('GO'),
+          ),
+        ),
+      ),
     );
   }
 }
